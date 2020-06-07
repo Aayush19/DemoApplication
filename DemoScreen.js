@@ -54,7 +54,9 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     LogoImageView: {
-        elevation: 3,
+        elevation: 5,
+        shadowColor: 'white',
+        shadowOpacity: 0.5,
         height: Dimensions.get('window').width / 5,
         width: Dimensions.get('window').width / 5,
         alignSelf: 'center',
@@ -71,7 +73,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         borderRadius: 10,
         borderWidth: 1,
-        padding: 20
+        padding: 20,
+        elevation: 5,
+        shadowColor: 'white',
+        shadowOpacity: 0.5
     },
     LogoImage: {
         height: '70%',
