@@ -24,23 +24,21 @@ export default class DemoScreen extends Component {
                     {/* //View for displaying Image */}
 
                     <View style={[styles.LogoImageView, { backgroundColor: '#ACE5EE', }]}>
-                        <Image source={require('./assets/fb.png')} style={styles.LogoImage} /> {/* //Image with proper height, width and border radius */}
+                        {/* //Image with proper height, width and border radius */}
+                        <Image source={require('./assets/fb.png')} style={styles.LogoImage} />
                     </View>
 
-                    {/* //closing view of first image */}
-
-                    {/* //View for displaying Image */}
 
                     <View style={[styles.LogoImageView, { backgroundColor: '#F5F5F5' }]}>
-                        <Image source={require('./assets/google.png')} style={styles.LogoImage} /> {/* //Image with proper height, width and border radius */}
+                        {/* //Image with proper height, width and border radius */}
+                        <Image source={require('./assets/google.png')} style={styles.LogoImage} />
                     </View>
 
-                    {/* //closing view of second image */}
 
-                    {/* // View for displaying button this can be replaced by TouchableOpacity when needs to be clicked */}
 
                     <View style={styles.ButtonView}>
-                        <Text style={{ justifyContent: 'center', fontSize: normalize(20), color: 'white', fontWeight: 'bold', textAlign: 'center' }}> {/* //Text to be displayed in a box container */}
+                        {/* //Text to be displayed in a box container */}
+                        <Text style={{ justifyContent: 'center', fontSize: normalize(20), color: 'white', fontWeight: 'bold', textAlign: 'center' }}>
                             Sign In
                         </Text>
                     </View>
