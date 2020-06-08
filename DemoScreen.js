@@ -1,34 +1,12 @@
 import React, { Component } from 'react';
 import { View, Image, Text, TouchableOpacity, Dimensions, StyleSheet, Platform, PixelRatio } from 'react-native';
 const { height, width } = Dimensions.get('window');
-const {
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
-} = Dimensions.get('window');
-
-// based on iphone 5s's scale
-const scale = SCREEN_WIDTH / 320;
-
-export function normalize(size) {
-    const newSize = size * scale
-    if (Platform.OS === 'ios') {
-        return Math.round(PixelRatio.roundToNearestPixel(newSize))
-    } else {
-        return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
-    }
-}
 
 export default class DemoScreen extends Component {
     render() {
         return (
-            <View style={styles.container}>
-
-                <View style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-evenly',
-                    width: '100%',
-                    marginTop: height / 1
-                }}>
+            <View style={styles.container1}>
+                <View style={styles.container2}>
                     <View style={[styles.LogoImageView, { backgroundColor: '#ACE5EE', }]}>
                         <Image source={require('./assets/fb.png')} style={styles.LogoImage} />
                     </View>
@@ -36,7 +14,6 @@ export default class DemoScreen extends Component {
                         <Image source={require('./assets/google.png')} style={styles.LogoImage} />
                     </View>
                     <View style={styles.ButtonView}>
-
                         <Text style={{ justifyContent: 'center', fontSize: normalize(20), color: 'white', fontWeight: 'bold', textAlign: 'center' }}>
                             Sign In
                         </Text>
@@ -48,10 +25,16 @@ export default class DemoScreen extends Component {
     }
 }
 const styles = StyleSheet.create({
-    container: {
+    container1: {
         alignContent: 'center',
         justifyContent: 'center',
         flex: 1,
+    },
+    container2: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        width: '100%',
+        marginTop: height / 1
     },
     LogoImageView: {
         elevation: 5,
@@ -74,9 +57,9 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         padding: 20,
-        elevation: 5,
-        shadowColor: 'white',
-        shadowOpacity: 0.5
+        elevation: 15,
+        // shadowColor: 'white',
+        shadowOpacity: 1
     },
     LogoImage: {
         height: '70%',
@@ -86,3 +69,19 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     }
 })
+const {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 320;
+
+export function normalize(size) {
+    const newSize = size * scale
+    if (Platform.OS === 'ios') {
+        return Math.round(PixelRatio.roundToNearestPixel(newSize))
+    } else {
+        return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+    }
+}
