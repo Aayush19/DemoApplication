@@ -1,29 +1,55 @@
 import React, { Component } from 'react';
-import { View, Image, Text, TouchableOpacity, Dimensions, StyleSheet, Platform, PixelRatio } from 'react-native';
+
+//importing various components from react-native library to use them
+import { Dimensions, Image, PixelRatio, Platform, StyleSheet, Text, View } from 'react-native';
+
+//getting height of the device
 const { height, width } = Dimensions.get('window');
 
+//creating and exporting a default class named DemoScreen into App.js
 export default class DemoScreen extends Component {
+
+    //Main Render function of the class
     render() {
+
+        //return displayes out the design layout
         return (
             <View style={styles.container1}>
+
+                {/* proper view styling to justify content evenly */}
+
                 <View style={styles.container2}>
+                    {/* //spliting Components in different different view for proper and organized display */}
+
+                    {/* //View for displaying Image */}
+
                     <View style={[styles.LogoImageView, { backgroundColor: '#ACE5EE', }]}>
-                        <Image source={require('./assets/fb.png')} style={styles.LogoImage} />
+                        <Image source={require('./assets/fb.png')} style={styles.LogoImage} /> {/* //Image with proper height, width and border radius */}
                     </View>
+
+                    {/* //closing view of first image */}
+
+                    {/* //View for displaying Image */}
+
                     <View style={[styles.LogoImageView, { backgroundColor: '#F5F5F5' }]}>
-                        <Image source={require('./assets/google.png')} style={styles.LogoImage} />
+                        <Image source={require('./assets/google.png')} style={styles.LogoImage} /> {/* //Image with proper height, width and border radius */}
                     </View>
+
+                    {/* //closing view of second image */}
+
+                    {/* // View for displaying button this can be replaced by TouchableOpacity when needs to be clicked */}
+
                     <View style={styles.ButtonView}>
-                        <Text style={{ justifyContent: 'center', fontSize: normalize(20), color: 'white', fontWeight: 'bold', textAlign: 'center' }}>
+                        <Text style={{ justifyContent: 'center', fontSize: normalize(20), color: 'white', fontWeight: 'bold', textAlign: 'center' }}> {/* //Text to be displayed in a box container */}
                             Sign In
                         </Text>
-
                     </View>
                 </View>
             </View>
         )
     }
 }
+// creating styles for each view
 const styles = StyleSheet.create({
     container1: {
         alignContent: 'center',
@@ -69,6 +95,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     }
 })
+
+//creating a normalize function for text to be automatically be rendered as per device scale
 const {
     width: SCREEN_WIDTH,
     height: SCREEN_HEIGHT,
